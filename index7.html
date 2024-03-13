@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <link rel="stylesheet" href="style/style.css" />
+    <link rel="stylesheet" href="style/reset.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Граффик</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+      canvas {
+        display: block;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container_main">
+      <header id="header">
+        <div class="container__header">
+          <div class="nav">
+            <div class="left__content">
+              <img class="Logo__image" src="image/Logo.jpg" alt="Logo" />
+              <h2 class="Logo_text">
+                <a href="index.html" class="header__menu">VVS</a>
+              </h2>
+            </div>
+            <div class="right__content">
+              <li class="navbar">
+                <a class="link__to__content" href="index2.html">САМОЛЁТЫ</a>
+                <a class="link__to__content" href="index7.html">ГРАФИКИ</a>
+                <a class="link__to__content" href="index8.html">ИНТЕРЕСНОЕ</a>
+                <a class="link__to__content" href="#footer-section">О НАС</a>
+              </li>
+            </div>
+          </div>
+        </div>
+      </header>
+      <main>
+        <!-- Добавляем canvas для графика -->
+        <canvas class="canvas" id="myChart" width="600" height="400"></canvas>
+      </main>
+      <script>
+        // Данные для графика (пример)
+        var data = {
+          labels: [
+            "0.1",
+            "0.2",
+            "0.3",
+            "0.4",
+            "0.5",
+            "0.6",
+            "0.7",
+            "0.8",
+            "0.9",
+            "1.0",
+          ],
+          datasets: [
+            {
+              label: "График поляры крыла",
+              data: [0.3, 0.5, 0.7, 0.9, 1.2, 1.4, 1.6, 1.8, 2.0, 2.2],
+              borderColor: "rgba(255, 99, 132, 1)",
+              backgroundColor: "rgba(255, 99, 132, 0.2)",
+              borderWidth: 1,
+            },
+          ],
+        };
+
+        // Опции для графика
+        var options = {
+          scales: {
+            xAxes: [
+              {
+                scaleLabel: {
+                  display: true,
+                  labelString: "Коэффициент лобового сопротивления (Cxa)",
+                },
+              },
+            ],
+            yAxes: [
+              {
+                scaleLabel: {
+                  display: true,
+                  labelString: "Коэффициент подъёмной силы (Cya)",
+                },
+              },
+            ],
+          },
+        };
+
+        // Создаем график
+        var ctx = document.getElementById("myChart").getContext("2d");
+        var myChart = new Chart(ctx, {
+          type: "scatter", // Тип графика (рассеяние)
+          data: data,
+          options: options,
+        });
+      </script>
+      <footer id="footer-section">
+        <div class="container">
+          <div class="footer">
+            <div class="footer__about"></div>
+            <div class="footer__nav__wrap">
+              <div class="footer__nav">
+                <h3 class="footer__nav__header">Company</h3>
+                <ul class="footer__nav__list">
+                  <li class="footer__nav__item">
+                    <a href="#!" class="footer__nav__link">About Us</a>
+                  </li>
+                  <li class="footer__nav__item">
+                    <a href="#!" class="footer__nav__link">Product</a>
+                  </li>
+                  <li class="footer__nav__item">
+                    <a href="#!" class="footer__nav__link">Testimonial</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="footer__nav">
+                <h3 class="footer__nav__header">Support</h3>
+                <ul class="footer__nav__list">
+                  <li class="footer__nav__item">
+                    <a href="#!" class="footer__nav__link">FAQ</a>
+                  </li>
+                  <li class="footer__nav__item">
+                    <a href="#!" class="footer__nav__link">Privacy Policy</a>
+                  </li>
+                  <li class="footer__nav__item">
+                    <a href="#!" class="footer__nav__link">Terms of Services</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="footer__nav">
+                <h3 class="footer__nav__header">Category</h3>
+                <ul class="footer__nav__list">
+                  <li class="footer__nav__item">
+                    <a href="#!" class="footer__nav__link">Military plane</a>
+                  </li>
+                  <li class="footer__nav__item">
+                    <a href="#!" class="footer__nav__link">Sport plane</a>
+                  </li>
+                  <li class="footer__nav__item">
+                    <a href="#!" class="footer__nav__link">More plane</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="footer-section">
+              <a href="#!" class="footer__social__link"></a>
+              <a href="#!" class="footer__social__link"></a>
+              <a href="#!" class="footer__social__link"></a>
+            </div>
+          </div>
+        </div>
+        <div class="footer__copyright">
+          <div class="container">
+            <p class="copyright__text">
+              ©2024 Влад Кукаркин. All right reserved
+            </p>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Поместим JavaScript код в конец документа -->
+    <script>
+      // Данные для графика (пример)
+      var data = {
+        labels: [
+          "0.1",
+          "0.2",
+          "0.3",
+          "0.4",
+          "0.5",
+          "0.6",
+          "0.7",
+          "0.8",
+          "0.9",
+          "1.0",
+        ],
+        datasets: [
+          {
+            label: "График поляры крыла",
+            data: [0.3, 0.5, 0.7, 0.9, 1.2, 1.4, 1.6, 1.8, 2.0, 2.2],
+            borderColor: "rgba(255, 99, 132, 1)",
+            backgroundColor: "rgba(255, 99, 132, 0.2)",
+            borderWidth: 1,
+          },
+        ],
+      };
+
+      // Опции для графика
+      var options = {
+        scales: {
+          xAxes: [
+            {
+              scaleLabel: {
+                display: true,
+                labelString: "Коэффициент лобового сопротивления (Cxa)",
+              },
+            },
+          ],
+          yAxes: [
+            {
+              scaleLabel: {
+                display: true,
+                labelString: "Коэффициент подъёмной силы (Cya)",
+              },
+            },
+          ],
+        },
+      };
+
+      // Создаем график
+      var ctx = document.getElementById("myChart").getContext("2d");
+      var myChart = new Chart(ctx, {
+        type: "scatter", // Тип графика (рассеяние)
+        data: data,
+        options: options,
+      });
+    </script>
+  </body>
+</html>
